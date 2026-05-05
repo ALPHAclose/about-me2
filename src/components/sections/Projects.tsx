@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 import { Button } from "@/components/ui/Button";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
+import { Reveal } from "@/components/ui/Reveal";
 
 import Image from "next/image";
 
@@ -44,43 +45,46 @@ export function Projects() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="glass-card overflow-hidden flex flex-col group rounded-[2.5rem]">
-              <div className="relative h-48 w-full overflow-hidden bg-muted">
-                <Image 
-                  src={project.image} 
-                  alt={project.title} 
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <div className="p-6 flex-grow">
-                <h3 className="text-2xl font-bold tracking-tight mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-foreground/70 line-clamp-3 mt-2 text-sm font-medium leading-relaxed">
-                  {project.description}
-                </p>
+            <Reveal key={index} delay={index * 0.1}>
+              <div className="glass-card overflow-hidden flex flex-col group rounded-[2.5rem]">
+                <div className="relative h-48 w-full overflow-hidden bg-muted">
+                  <Image 
+                    src={project.image} 
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                    <a href={project.githubUrl} className="p-3 bg-background rounded-full hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300">
+                      <FaGithub className="w-5 h-5" />
+                    </a>
+                    <a href={project.liveUrl} className="p-3 bg-background rounded-full hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
                 
-                <div className="flex flex-wrap gap-2 mt-6">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 glass-text text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="text-[10px] font-black uppercase tracking-[0.2em] text-primary glass-text px-3 py-1">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <h3 className="text-2xl font-black mb-4 tracking-tighter uppercase">{project.title}</h3>
+                  <p className="text-foreground/60 text-sm mb-8 line-clamp-3 font-bold leading-relaxed">{project.description}</p>
+                  
+                  <div className="mt-auto pt-6 border-t border-primary/5 flex justify-between items-center">
+                    <a href={project.liveUrl} className="text-sm font-black uppercase tracking-widest text-primary flex items-center group/link">
+                      View Project
+                      <ExternalLink className="w-4 h-4 ml-1 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="p-6 pt-0 flex gap-4 mt-auto">
-                <Button variant="default" size="sm" asChild className="flex-1 rounded-xl font-bold">
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" /> Live
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" asChild className="flex-1 rounded-xl font-bold border-primary/20">
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="w-4 h-4 mr-2" /> Source
-                  </a>
-                </Button>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

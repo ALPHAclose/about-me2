@@ -11,7 +11,7 @@ interface RevealProps {
 
 export const Reveal = ({ children, width = "100%", delay = 0.2 }: RevealProps) => {
   return (
-    <div style={{ position: "relative", width, overflow: "hidden" }}>
+    <div style={{ position: "relative", width }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

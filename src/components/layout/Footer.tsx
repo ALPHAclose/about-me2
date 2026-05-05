@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaInstagram, FaTelegram } from "react-icons/fa6";
 
 
 export function Footer() {
@@ -12,8 +12,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
           <div className="flex flex-col items-center md:items-start">
-            <span className="text-xl font-bold tracking-tighter mb-2">
-              Portfolio<span className="text-primary">.</span>
+            <span className="text-2xl font-black tracking-tighter mb-2">
+              Alpha Analytics<span className="text-primary">.</span>
             </span>
             <p className="text-sm text-muted-foreground text-center md:text-left max-w-sm">
               Building scalable, high-performance web experiences. Available for freelance opportunities.
@@ -30,6 +30,12 @@ export function Footer() {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Twitter">
               <FaXTwitter size={20} />
             </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-[#E4405F] transition-colors" aria-label="Instagram">
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-[#24A1DE] transition-colors" aria-label="Telegram">
+              <FaTelegram size={20} />
+            </a>
             <a href="mailto:hello@example.com" className="p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
               <Mail size={20} />
             </a>
@@ -38,7 +44,7 @@ export function Footer() {
         </div>
         
         <div className="mt-8 pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; {currentYear} John Doe. All rights reserved.</p>
+          <p>&copy; {currentYear} Alpha Analytics. All rights reserved.</p>
           <div className="flex space-x-4">
             <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>

@@ -16,95 +16,95 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           <div>
-            <div className="space-y-8 mb-8 text-muted-foreground">
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0 text-primary">
-                  <Mail className="w-5 h-5" />
+            <div className="space-y-8 mb-12">
+              <div className="flex items-center group">
+                <div className="w-14 h-14 glass rounded-2xl flex items-center justify-center mr-5 shrink-0 text-primary shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-foreground font-semibold">Email</h4>
-                  <a href="mailto:hello@example.com" className="hover:text-primary transition-colors">hello@example.com</a>
+                  <h4 className="text-foreground font-bold uppercase tracking-widest text-xs mb-1">Email</h4>
+                  <a href="mailto:hello@example.com" className="text-xl font-extrabold hover:text-primary transition-colors tracking-tight">hello@example.com</a>
                 </div>
               </div>
               
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0 text-primary">
-                  <MapPin className="w-5 h-5" />
+              <div className="flex items-center group">
+                <div className="w-14 h-14 glass rounded-2xl flex items-center justify-center mr-5 shrink-0 text-primary shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-foreground font-semibold">Location</h4>
-                  <span>Tashkent, Uzbekistan</span>
+                  <h4 className="text-foreground font-bold uppercase tracking-widest text-xs mb-1">Location</h4>
+                  <span className="text-xl font-extrabold tracking-tight">Tashkent, Uzbekistan</span>
                 </div>
               </div>
 
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0 text-primary">
-                  <Calendar className="w-5 h-5" />
+              <div className="flex items-center group">
+                <div className="w-14 h-14 glass rounded-2xl flex items-center justify-center mr-5 shrink-0 text-primary shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Calendar className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-foreground font-semibold">Meeting</h4>
-                  <a href="#" className="hover:text-primary transition-colors flex items-center">
-                    Book a time on Calendly <ArrowRight className="w-3 h-3 ml-1" />
+                  <h4 className="text-foreground font-bold uppercase tracking-widest text-xs mb-1">Meeting</h4>
+                  <a href="#" className="text-xl font-extrabold hover:text-primary transition-colors flex items-center tracking-tight">
+                    Book a time <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </div>
               </div>
             </div>
             
-            <div className="glass p-6 rounded-xl inline-block border-primary/20">
-              <div className="flex items-center space-x-3">
+            <div className="glass p-6 rounded-2xl inline-block border-primary/20 shadow-xl">
+              <div className="flex items-center space-x-4">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                 </span>
-                <span className="font-medium text-sm">Available for new opportunities</span>
+                <span className="font-bold text-sm uppercase tracking-widest">Available for new opportunities</span>
               </div>
             </div>
           </div>
 
-          <div className="glass-card p-8 rounded-2xl border border-border/50">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
+          <div className="glass-card p-12 rounded-[2.5rem] border-primary/10 shadow-2xl">
+            <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div className="space-y-4">
+                  <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-foreground/40">Name //</label>
                   <input 
                     type="text" 
                     id="name" 
-                    className="w-full px-4 py-3 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                    className="w-full px-6 py-5 bg-white/5 dark:bg-black/20 border border-white/10 dark:border-white/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all font-bold text-lg"
                     placeholder="John Doe"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
+                <div className="space-y-4">
+                  <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-foreground/40">Email //</label>
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full px-4 py-3 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                    className="w-full px-6 py-5 bg-white/5 dark:bg-black/20 border border-white/10 dark:border-white/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all font-bold text-lg"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+              <div className="space-y-4">
+                <label htmlFor="subject" className="text-xs font-black uppercase tracking-[0.2em] text-foreground/40">Subject //</label>
                 <input 
                   type="text" 
                   id="subject" 
-                  className="w-full px-4 py-3 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+                  className="w-full px-6 py-5 bg-white/5 dark:bg-black/20 border border-white/10 dark:border-white/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all font-bold text-lg"
                   placeholder="Project Inquiry"
                 />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
+              <div className="space-y-4">
+                <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-foreground/40">Message //</label>
                 <textarea 
                   id="message" 
                   rows={5}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow resize-none"
+                  className="w-full px-6 py-5 bg-white/5 dark:bg-black/20 border border-white/10 dark:border-white/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all font-bold text-lg resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
 
-              <Button type="submit" size="lg" className="w-full">
+              <Button type="submit" size="lg" className="w-full rounded-2xl h-16 text-xl font-black uppercase tracking-[0.2em] shadow-[0_10px_30px_rgba(255,106,0,0.3)]">
                 Send Message
               </Button>
             </form>

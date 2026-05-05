@@ -19,23 +19,23 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #09090b;
-    --primary: #4f46e5; /* Indigo 600 */
+    --foreground: #1a1a1a;
+    --primary: #ff8c00;
     --primary-foreground: #ffffff;
-    --muted: #f4f4f5; /* Zinc 100 */
-    --muted-foreground: #71717a; /* Zinc 500 */
-    --border: #e4e4e7; /* Zinc 200 */
-    --radius: 0.5rem;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    --border: #e4e4e7;
+    --radius: 1rem;
   }
 
   .dark {
-    --background: #09090b; /* Zinc 950 */
-    --foreground: #fafafa; /* Zinc 50 */
-    --primary: #6366f1; /* Indigo 500 */
-    --primary-foreground: #ffffff;
-    --muted: #27272a; /* Zinc 800 */
-    --muted-foreground: #a1a1aa; /* Zinc 400 */
-    --border: #27272a; /* Zinc 800 */
+    --background: #0d0d0d;
+    --foreground: #f2f2f2;
+    --primary: #ff6a00;
+    --primary-foreground: #000000;
+    --muted: #1a1a1a;
+    --muted-foreground: #a1a1aa;
+    --border: #262626;
   }
 }
 
@@ -51,9 +51,16 @@
 
 @layer utilities {
   .glass {
-    @apply bg-background/70 backdrop-blur-md border border-border/50;
+    @apply bg-white/60 dark:bg-black/40 backdrop-blur-2xl border border-white/40 dark:border-white/10 shadow-2xl;
   }
   .glass-card {
-    @apply bg-muted/30 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors duration-300;
+    @apply bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10 hover:border-primary/50 transition-all duration-700 shadow-xl hover:shadow-2xl hover:-translate-y-1;
+  }
+  .glass-text {
+    @apply bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-2xl px-4 py-2 border border-white/20 dark:border-white/5;
+  }
+  .neural-glow {
+    @apply fixed inset-0 z-[-1] overflow-hidden pointer-events-none;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 106, 0, 0.15) 0%, transparent 70%);
   }
 }

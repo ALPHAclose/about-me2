@@ -48,12 +48,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-bold text-foreground/70 hover:text-primary transition-all duration-300 px-6 py-2 rounded-full glass-text hover:glass border-transparent"
               >
                 {link.name}
               </Link>

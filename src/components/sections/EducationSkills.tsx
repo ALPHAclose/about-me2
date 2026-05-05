@@ -62,36 +62,34 @@ export function EducationSkills() {
                   Academic Background
                 </h3>
                 {education.map((edu, index) => (
-                  <Card key={index} className="mb-4">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-bold text-lg">{edu.degree}</h4>
-                        <span className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded">{edu.year}</span>
-                      </div>
-                      <p className="font-medium text-foreground mb-2">{edu.school}</p>
-                      <p className="text-sm text-muted-foreground">{edu.details}</p>
-                    </CardContent>
-                  </Card>
+                  <div key={index} className="glass-card p-10 rounded-[2rem] mb-6 shadow-xl">
+                    <div className="flex justify-between items-start mb-6">
+                      <h4 className="font-black text-2xl tracking-tighter uppercase">{edu.degree}</h4>
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary glass-text px-4 py-2">{edu.year}</span>
+                    </div>
+                    <p className="font-black text-foreground mb-4 text-lg italic opacity-80">{edu.school}</p>
+                    <p className="text-base text-foreground/60 font-bold leading-relaxed">{edu.details}</p>
+                  </div>
                 ))}
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold flex items-center mb-4">
-                  <Award className="mr-2 text-primary" />
+                <h3 className="text-2xl font-bold flex items-center mb-6 uppercase tracking-tighter">
+                  <Award className="mr-3 text-primary" />
                   Certifications
                 </h3>
                 <div className="grid gap-4">
                   {certifications.map((cert, index) => (
                     <a key={index} href={cert.link} className="block group">
-                      <Card className="transition-colors group-hover:border-primary/50 group-hover:bg-muted/50">
-                        <CardContent className="p-4 flex justify-between items-center">
+                      <div className="glass-card p-6 rounded-2xl transition-all duration-300 group-hover:scale-[1.02] border-primary/5">
+                        <div className="flex justify-between items-center">
                           <div>
-                            <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{cert.name}</h4>
-                            <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                            <h4 className="font-bold text-foreground group-hover:text-primary transition-colors text-lg">{cert.name}</h4>
+                            <p className="text-sm text-foreground/60 font-medium">{cert.issuer}</p>
                           </div>
-                          <span className="text-sm text-muted-foreground">{cert.date}</span>
-                        </CardContent>
-                      </Card>
+                          <span className="text-xs font-bold text-primary glass-text px-3 py-1">{cert.date}</span>
+                        </div>
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -105,16 +103,18 @@ export function EducationSkills() {
             
             <div className="space-y-6">
               {skillCategories.map((category, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl border border-border/50">
-                  <h3 className="text-lg font-semibold flex items-center mb-4">
-                    {category.icon}
-                    <span className="ml-2">{category.title}</span>
+                <div key={index} className="glass-card p-10 rounded-[2.5rem] border-primary/5 shadow-2xl">
+                  <h3 className="text-xl font-bold flex items-center mb-6 text-primary uppercase tracking-tight">
+                    <div className="p-2 bg-primary/10 rounded-lg mr-3">
+                      {category.icon}
+                    </div>
+                    <span>{category.title}</span>
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, i) => (
                       <span 
                         key={i} 
-                        className="px-3 py-1 bg-background border border-border text-sm font-medium rounded-full text-foreground"
+                        className="px-4 py-2 glass-text border border-primary/10 text-xs font-bold uppercase tracking-widest text-foreground/80 hover:text-primary hover:border-primary/40 transition-colors cursor-default"
                       >
                         {skill}
                       </span>

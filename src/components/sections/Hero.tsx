@@ -17,18 +17,20 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="flex flex-col space-y-6"
           >
-            <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium w-max">
-              Available for new opportunities
+            <div className="glass-text inline-block w-max mb-4">
+              <span className="text-xs font-black uppercase tracking-[0.2em] text-primary">System Online // Neural Interface</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-              Building <span className="text-primary">digital</span> <br className="hidden md:block" />
-              experiences that matter.
-            </h1>
-            
-            <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Senior Software Engineer & AI Specialist. I specialize in building scalable web applications and intuitive interfaces.
-            </p>
+            <div className="glass p-8 md:p-14 rounded-[2.5rem] space-y-8 shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-white/20 dark:border-white/5">
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-none">
+                LAYER<span className="text-primary">-</span>X <br className="hidden md:block" />
+                <span className="text-foreground/90">NEURAL CORE.</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-foreground/70 max-w-xl leading-relaxed font-bold tracking-tight">
+                Engineered with high-res optics and a zero-gravity frame. Building scalable web applications and intuitive interfaces.
+              </p>
+            </div>
             
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" className="group">
@@ -57,9 +59,10 @@ export function Hero() {
             className="relative flex justify-center lg:justify-end"
           >
             {/* Abstract visual or placeholder for a profile image */}
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-primary/20 to-primary/5 border border-primary/20 backdrop-blur-3xl flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent opacity-50 mix-blend-overlay"></div>
-                <div className="text-center text-muted-foreground/50 font-medium">Profile Image Placeholder</div>
+            <div className="w-72 h-72 md:w-[28rem] md:h-[28rem] rounded-full bg-gradient-to-tr from-primary via-primary/20 to-transparent border border-primary/20 backdrop-blur-3xl flex items-center justify-center relative overflow-hidden shadow-[0_0_150px_rgba(255,106,0,0.4)] group">
+                <div className="absolute inset-0 bg-white/5 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent animate-pulse"></div>
+                <div className="text-center text-primary-foreground font-black text-4xl uppercase tracking-[0.3em] opacity-40 group-hover:opacity-100 transition-opacity duration-1000">NEURAL</div>
             </div>
           </motion.div>
           

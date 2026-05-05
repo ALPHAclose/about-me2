@@ -37,23 +37,21 @@ export function Testimonials() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="relative mt-8 group hover:border-primary/50 transition-colors">
-              <div className="absolute -top-6 left-6 bg-primary text-primary-foreground p-3 rounded-full shadow-lg">
+            <div key={index} className="glass-card relative mt-10 group rounded-[2.5rem] p-10 pt-14 shadow-2xl">
+              <div className="absolute -top-8 left-8 bg-primary text-primary-foreground p-4 rounded-2xl shadow-[0_10px_30px_rgba(255,140,0,0.4)] group-hover:scale-110 transition-transform duration-500">
                 <Quote className="w-6 h-6" />
               </div>
-              <CardContent className="pt-10 pb-6 px-6">
-                <p className="text-muted-foreground italic mb-6">&quot;{testimonial.content}&quot;</p>
-                <div className="flex items-center justify-between border-t border-border/50 pt-4">
-                  <div>
-                    <h4 className="font-semibold text-foreground">{testimonial.author}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}, {testimonial.company}</p>
-                  </div>
-                  <a href={testimonial.linkedin} className="text-primary hover:underline text-sm font-medium">
-                    LinkedIn
-                  </a>
+              <p className="text-foreground/80 italic mb-10 text-lg leading-relaxed font-medium">&quot;{testimonial.content}&quot;</p>
+              <div className="flex items-center justify-between border-t border-primary/10 pt-6">
+                <div>
+                  <h4 className="font-bold text-foreground text-lg">{testimonial.author}</h4>
+                  <p className="text-sm text-foreground/50 font-bold uppercase tracking-widest">{testimonial.role}, {testimonial.company}</p>
                 </div>
-              </CardContent>
-            </Card>
+                <a href={testimonial.linkedin} className="text-primary font-extrabold hover:underline text-sm uppercase tracking-tighter">
+                  Verifiable
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </div>

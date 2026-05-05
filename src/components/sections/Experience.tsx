@@ -53,7 +53,7 @@ export function Experience() {
           subtitle="My professional journey and key achievements in the tech industry."
         />
         
-        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.5rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
+        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.5rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/50 before:to-transparent">
           {experiences.map((exp) => (
             <div key={exp.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
               
@@ -61,37 +61,36 @@ export function Experience() {
                 <Briefcase className="w-4 h-4 text-primary" />
               </div>
               
-              <Card className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] hover:border-primary/50 transition-colors">
-                <CardHeader>
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-2">
-                    <CardTitle className="text-xl">{exp.role}</CardTitle>
-                    <div className="flex items-center text-sm text-muted-foreground bg-muted px-2 py-1 rounded-md">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {exp.period}
-                    </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-10 rounded-[2.5rem] shadow-2xl">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                  <h3 className="text-2xl font-bold tracking-tight">{exp.role}</h3>
+                  <div className="flex items-center text-xs font-bold uppercase tracking-widest text-primary glass-text px-3 py-1">
+                    <Calendar className="w-3 h-3 mr-1" />
+                    {exp.period}
                   </div>
-                  <CardDescription className="flex flex-col sm:flex-row gap-2 sm:items-center text-base">
-                    <a href={exp.companyUrl} className="font-medium text-foreground hover:text-primary transition-colors inline-flex items-center">
-                      {exp.company}
-                      <ExternalLink className="w-3 h-3 ml-1" />
-                    </a>
-                    <span className="hidden sm:inline text-muted-foreground">•</span>
-                    <span className="flex items-center text-muted-foreground">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {exp.location}
-                    </span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="text-sm leading-relaxed">
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-2 sm:items-center text-base mb-6">
+                  <a href={exp.companyUrl} className="font-bold text-foreground hover:text-primary transition-colors inline-flex items-center">
+                    {exp.company}
+                    <ExternalLink className="w-3 h-3 ml-1" />
+                  </a>
+                  <span className="hidden sm:inline text-foreground/30">•</span>
+                  <span className="flex items-center text-foreground/60 font-medium">
+                    <MapPin className="w-3 h-3 mr-1" />
+                    {exp.location}
+                  </span>
+                </div>
+                
+                <ul className="space-y-3">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="text-sm leading-relaxed text-foreground/80 flex items-start group">
+                      <span className="mr-2 text-primary group-hover:scale-125 transition-transform">•</span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               
             </div>
           ))}

@@ -18,34 +18,27 @@ export function About() {
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="glass p-10 md:p-14 rounded-[2.5rem] space-y-8 text-lg md:text-xl text-foreground/80 leading-relaxed shadow-2xl border-white/20 dark:border-white/5 font-bold">
             <p>
-              Hello! I&apos;m a passionate Software Engineer with a deep interest in building digital experiences that combine beautiful design with robust, scalable engineering. My journey in web development started back in 2018 when I decided to try editing custom Tumblr themes—turns out hacking together HTML &amp; CSS taught me a lot about logic and structure.
+              Hello! I&apos;m a passionate Software Engineer with a deep interest in building digital experiences that combine beautiful design with robust, scalable engineering.
             </p>
             <p>
-              Fast-forward to today, and I&apos;ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
-            </p>
-            <p>
-              When I&apos;m not at the computer, I&apos;m usually exploring the outdoors, reading about new technologies, or contributing to open-source projects.
+              My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients. I specialize in the Neural-X interface architecture.
             </p>
           </div>
           
-          <div className="glass-card p-8 rounded-2xl border border-border/50 bg-background/50 backdrop-blur-sm">
-            <h3 className="text-xl font-semibold mb-6">Quick Facts</h3>
-            <ul className="space-y-4">
+          <div className="glass-card p-12 rounded-[2.5rem] border-primary/10 shadow-[0_30px_60px_rgba(0,0,0,0.1)]">
+            <h3 className="text-3xl font-black mb-10 text-primary uppercase tracking-tighter italic">Technical Specs //</h3>
+            <ul className="space-y-8">
               {highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start">
-                  <CheckCircle className="mr-3 h-6 w-6 text-primary flex-shrink-0" />
-                  <span className="text-muted-foreground">{highlight}</span>
+                <li key={index} className="flex items-center group">
+                  <div className="mr-6 p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg">
+                    <CheckCircle className="h-6 w-6" />
+                  </div>
+                  <span className="text-foreground/90 font-black uppercase tracking-tight text-sm md:text-base">{highlight}</span>
                 </li>
               ))}
             </ul>
-            
-            <div className="mt-8 pt-8 border-t border-border/50">
-              <p className="text-sm text-muted-foreground italic">
-                Verifiability note: All my work history and education can be verified via my <a href="#" className="text-primary hover:underline">LinkedIn profile</a> or official credentials.
-              </p>
-            </div>
           </div>
         </div>
       </div>

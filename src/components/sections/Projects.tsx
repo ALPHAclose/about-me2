@@ -44,44 +44,43 @@ export function Projects() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col group">
+            <div key={index} className="glass-card overflow-hidden flex flex-col group rounded-[2.5rem]">
               <div className="relative h-48 w-full overflow-hidden bg-muted">
                 <Image 
                   src={project.image} 
                   alt={project.title} 
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription className="line-clamp-3 mt-2 text-base">
+              <div className="p-6 flex-grow">
+                <h3 className="text-2xl font-bold tracking-tight mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-foreground/70 line-clamp-3 mt-2 text-sm font-medium leading-relaxed">
                   {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2">
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mt-6">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="px-2 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-md">
+                    <span key={i} className="px-3 py-1 glass-text text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
                       {tag}
                     </span>
                   ))}
                 </div>
-              </CardContent>
-              <CardFooter className="flex gap-4 pt-4 border-t border-border/50">
-                <Button variant="default" size="sm" asChild className="flex-1">
+              </div>
+              <div className="p-6 pt-0 flex gap-4 mt-auto">
+                <Button variant="default" size="sm" asChild className="flex-1 rounded-xl font-bold">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
+                    <ExternalLink className="w-4 h-4 mr-2" /> Live
                   </a>
                 </Button>
-                <Button variant="outline" size="sm" asChild className="flex-1">
+                <Button variant="outline" size="sm" asChild className="flex-1 rounded-xl font-bold border-primary/20">
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <FaGithub className="w-4 h-4 mr-2" /> Source
                   </a>
                 </Button>
-
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
